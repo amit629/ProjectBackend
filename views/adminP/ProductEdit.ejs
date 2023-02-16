@@ -1,0 +1,23 @@
+<% let i=0,st=""%>
+<% for(let ele of productData[0].description) {%>
+    <%if(i++==productData[0].description.length) {%>
+        <%st+=ele%>
+    <%} else{%>
+        <%st+=ele+"||"%>
+    <%}%>
+<%}%>
+<div class="container-fluid editForm">
+    <form action="/admin/MyProducts/<%=productData[0].pid%>/edit?_method=PUT" method="post"  align="center">
+        <div class="m-5 mb-2">
+            <input type="text" placeholder="name" name="proName" class="form-control" value="<%=productData[0].name%>" required>
+        </div>
+        <div class="m-5 mb-2">
+            <input type="number" placeholder="price" name="price" class="form-control" value="<%=productData[0].price%>" required>
+        </div>
+        <div class="m-5 mb-2">
+            <textarea type="text" placeholder="description use || for multiple" name="desc" class="form-control" rows="6" required><%=st%></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary mb-3 ">Add Pro</button>
+    </form>
+</div>

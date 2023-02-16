@@ -1,0 +1,31 @@
+.adminForm{
+    position: relative;
+    top:80px;
+}
+.adminPro{
+    position:relative;
+    top:100px;
+}
+.AdminCards img{
+    min-width:240px;
+    max-width:240px;
+    min-height:200px;
+    max-height:200px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    margin-left:25px;
+    margin-top: 20px;
+}
+.AdminCards .card{
+    width:20vw;
+    height: 50vh;
+    margin-top: 20px;
+    
+}
+.editForm{
+    position: relative;
+    top:10vh;
+}
+.AdminCards{
+    margin-bottom: 50px;
+}

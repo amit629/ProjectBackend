@@ -1,0 +1,30 @@
+<% if(errors=='exist') { %>
+    <script>
+        alert('user exists')
+    </script>
+<%}%>
+<div class='container-fluid w-50' style="position:relative;top:39vh;margin-bottom: 40%;"> 
+    <form action="/app/register" method="post">
+        <div class="mb-3">
+            <label for="#username">Username</label>
+            <input id="username" type="text" class="form-control" name="userName">
+        </div>
+        <div class="mb-3">
+            <label for="#em">Email</label>
+            <input id="em" type="email" class="form-control" name="userEmail">
+        </div>
+        <div class="mb-3">
+            <label for="#pass">password</label>
+            <input id="pass" type="text" class="form-control" name="userPass">
+        </div>
+        <div class="mb-3">
+            <label for="#pass">Buyer</label>
+            <input id="pass" type="radio" class="form-check-input" name="userRole" value="buyer" required>
+            <label for="#pass">seller</label>
+            <input id="pass" type="radio" class="form-check-input" name="userRole" value="seller" required>
+        </div>
+        <button class="btn btn-primary">
+            register
+        </button>   
+    </form> 
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid adminPro">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-11 d-flex justify-content-evenly align-items-evenly flex-wrap AdminCards">
+            <% let data=productData%>
+            <% if(data.length==0) { %>
+                <h1>No Product to show</h1>
+            <%} else{ %>
+                <% for(let product of productData){%>
+                    
+                        <div class="card" align="center">
+                            <img src="/<%=product.image.fileName%>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">
+                                <% let eleName=product.name %>
+                                <% if(eleName.length>40) {%>
+                                    <%eleName=eleName.slice(0,40)+"..."%>
+                                <%}%>
+                                <%=eleName%>
+                            </h5>
+                            <!-- <p class="card-text"><%= product.description %> </p>  -->
+                            <a href="/app/store/product/<%= product.pid %>" class="btn btn-primary mt-3">Show</a>
+                            <a href="/admin/MyProducts/<%=product.pid %>/edit" class="btn btn-success mt-3">Edit</a>
+                            <form action="/admin/MyProducts/<%=product.pid %>/delete?_method=DELETE"  method="post" style="display:inline-block;">
+                                <button  class="btn btn-danger mt-3">Delete</button>
+                            </form>
+                            </div>
+                        </div>
+                    
+                <%}%> 
+            <%}%>
+    
+        </div>
+        <div class="col">
+            
+        </div>
+        
+    </div>
+</div>

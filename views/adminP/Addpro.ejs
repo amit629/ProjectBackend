@@ -1,0 +1,23 @@
+<form action="/admin/AddProducts" method="post" enctype="multipart/form-data" align="center" class="adminForm">
+    <div class="m-5 mb-2">
+        <input type="text" placeholder="name" name="proName" class="form-control" required>
+    </div>
+    <div class="m-5 mb-2">
+        <input type="number" placeholder="price" name="price" class="form-control" required>
+    </div>
+    <div class="m-5 mb-2">
+        <textarea type="text" placeholder="description use || for multiple" name="desc" class="form-control" rows="6" required></textarea>
+    </div>
+    <div class="m-5 mb-2">
+        <input type="file" name="img"  class="form-control" required>
+    </div>
+    <div class="m-5 mb-2">
+        <select name="sel" id="" class="form-control" required>
+            <option value="">please select from list</option>
+            <option value="clothing">clothing</option>
+            <option value="watch">watch</option>
+            <option value="shoes">shoes</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3 ">Add Pro</button>
+</form>

@@ -1,0 +1,102 @@
+
+
+<% let pro=productData[0]
+    let rel=relatedPro
+    
+%>
+
+<% if(pro.length==0) { %>
+    <script>
+        alert('product dosent exist redirecting')
+        window.location.href='/store'
+    </script>
+<%} else { %>
+    <% let ranNo=(pro.pid).slice(pro.pid.length-3) %>
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src='/<%=pro.image.fileName%>' alt="..." /></div>
+                <div class="col-md-6">
+                    <div class="small mb-1">SKU: BST-<%=ranNo%></div>
+                    <h1 class=" fw-bolder"><%=pro.name%></h3>
+                    <div class="fs-5 mb-5">
+                        
+                        <span><span class="fw-bolder">Rs</span> <%=pro.price%></span>
+                    </div>
+                    <p class="lead"><ul type="disc"> 
+                        <% for(var i=0;i<pro.description.length;i++) { %>
+                            <li><%=pro.description[i]%></li>
+                        <%}%>
+                    </ul></p>
+                    <div class="d-flex">
+                        <button class="btn btn-secondary decQuant">-</button>
+                        <input class="quant btn" value="1" style="max-width: 3rem;outline: none;border:none" disabled></span>
+                        <!-- <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" max="6"/> -->
+                        <button class="btn btn-secondary addQuant">+</button>&nbsp;
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        let addBut=document.querySelector('.addQuant');
+        let decBut=document.querySelector('.decQuant');
+        let quant=document.querySelector('.quant')
+        let data=quant.value
+        addBut.addEventListener('click',()=>{
+            if(data<6)
+            {
+                data++;
+                quant.value=data;
+            }
+        })
+        decBut.addEventListener('click',()=>{
+            if(data!=0)
+            {
+                data--;
+                quant.value=data
+            }
+        })
+    </script>
+    <!-- related products -->
+
+    <section class="py-5 bg-light">
+        <div class="container px-4 px-lg-5 mt-5">
+            <%if(rel.length>0) { %>
+                <h2 class="fw-bolder mb-4">Related products</h2>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <% rel.forEach(function(ele){ %>
+                    <% let eleName=ele.name;%>
+                    <% if(eleName.length>40){ %>
+                        <% eleName=ele.name.slice(0,40)+'...' %>
+                    <%}%>
+                    <div class="col mb-5">
+                        <div class="card h-100 relCard"  style="width:auto;">
+                            
+                            <img class="card-img-top" src="/<%=ele.image.fileName%>" alt="product" />
+                            
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    
+                                    <h5 class="fw-bolder"><%=eleName%></h5>
+                                    
+                                    Rs-<%=ele.price%>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="/app/store/product/<%=ele.pid%>">View options</a></div>
+                            </div>
+                        </div>
+                    </div>
+                <%})%>
+            </div>    
+            <%}%>
+        </div>
+    </section>
+<%}%>

@@ -1,0 +1,109 @@
+body{
+    background-color:whitesmoke;
+}
+.imageStyle{
+    min-width:220px;
+    max-width:220px;
+    min-height:220px;
+    max-height:220px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    margin-left:45px;
+    margin-top: 20px;
+}
+.productCards .card{
+    width:20vw;
+    height:54vh;margin-top: 20px;
+}
+.nav-links-dec a{
+    text-decoration: none;
+    color:grey;
+    font-weight: bolder;
+
+}
+.nav-links-dec a:hover{
+    color:rgb(56, 54, 54);
+    opacity:0.9;
+
+}
+
+.relCard img{
+    
+    min-height:220px;
+    max-height:220px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    
+    margin-top: 20px;
+}
+.banner{
+    width:100%;
+    height: auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-color: whitesmoke;
+    margin-top: 40px;
+    padding: 0px;
+}
+.banner img{
+    min-height:360px;
+    max-height:360px;
+    min-width:600px;
+    max-width:600px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.banner .text{
+    position: absolute;
+    top:70px;
+    left:30px;
+    z-index: 10;
+    
+}
+.banner .text span:nth-child(1){
+    font-size: 2.8rem;
+    font-weight: bolder;
+    color: black;
+}
+.banner .text span:nth-child(2){
+    /* font-size: 3rem; */
+    font-weight: bold;
+    color: black;
+    margin-left: 20px;
+}
+.banner .ch-1{
+    position: relative;
+}
+
+.style-one{
+    /* background-color: brown; */
+    top:200px;
+    left:100px;
+    
+}
+.style-one span:first-child{
+    color: black;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.style-one span:nth-of-type(2){
+    color: black;
+    font-size: 4.2rem;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.style-one .btn{
+    background-color: #717fe0;
+    border-radius:30px;
+    height:50px;
+    width:180px;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: white;
+}

@@ -1,0 +1,55 @@
+<div class="container-fluid position-fixed p-0 navbar-check" style="z-index: 30;" >
+    <nav class="navbar navbar-expand-lg bg-transparent sp-c">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-3" style="margin:0.5%;margin-left: 10%;" href="/">Bablu Store</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" style="margin-left:5%;" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" aria-current="page" href="/app">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold ms-4" href="/app/store">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold ms-4" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold ms-4" href="#">Contact</a>
+              </li>
+              <% if(userData.role=='seller') {%>
+                <li class="nav-item">
+                  <a class="nav-link fw-bold ms-4" href="/admin">adminPanel</a>
+                </li>
+              <%}%>
+            </ul>
+
+            <ul class="navbar-nav mb-2 mb-lg-0" style="margin-right: 10%;">
+              <% if(userData) {%>
+                <li class="nav-item m-2">
+                  <a class="nav-link " aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass fs-5"></i></a>
+                </li>
+                <li class="nav-item m-2">
+                    <a class="nav-link " aria-current="page" href="#"><i class="fa-solid fa-cart-shopping fs-5"></i></a>
+                </li>
+                <li class="nav-item m-2">
+                    <a class="nav-link " aria-current="page" href="#"><i class="fa-regular fa-heart fs-5"></i></a>
+                </li>
+                <li class="nav-item m-2">
+                  <a class="nav-link " aria-current="page" href="/app/logout">logout</a>
+              </li>
+              <%} else { %>
+                <li class="nav-item">
+                  <a class="nav-link fw-bold ms-4" href="/app/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fw-bold ms-4" href="/app/register">Register</a>
+                </li>
+              <%}%>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</div>
